@@ -31,6 +31,7 @@
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', e => {
             $(`#${e.target.getAttribute('aria-controls')}`).classList.toggle('show');
+            e.target.classList.toggle('active');
         });
     });
 
