@@ -30,7 +30,7 @@
     });
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', e => {
-            $(`#${e.target.ariaControls}`).classList.toggle('show');
+            $(`#${e.target.getAttribute('aria-controls')}`).classList.toggle('show');
         });
     });
 
