@@ -415,7 +415,7 @@ button:focus:not(:focus-visible) {
   --btn-background: transparent;
 }
 
-.btn-icon.active {
+.btn-icon.btn-toggle.active {
   --btn-background: var(--color-border-primary);
 }
 
