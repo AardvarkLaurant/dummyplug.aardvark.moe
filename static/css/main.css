@@ -647,13 +647,17 @@ button:not(:disabled),
   .reader,
   .reader.two-pane {
     grid-template-columns: 1fr;
-    grid-template-rows: 70vh;
+    grid-template-rows: 1fr;
     /*max-height: calc(100% - var(--height-site-header));
     overflow-y: hidden;*/
   }
 
   .reader:not(.two-pane) {
     grid-template-rows: 1fr;
+  }
+
+  #pane-left {
+    max-height: unset;
   }
 
   #pane-right {
@@ -666,8 +670,8 @@ button:not(:disabled),
   }
 
   #pane-right .pane-item {
-    max-height: calc(30vh - var(--height-site-header));
-    position: absolute;
+    height: 30vh;
+    position: fixed;
     bottom: 0;
     background: var(--color-background-primary);
     border-top: 2px solid var(--color-background-dark);
