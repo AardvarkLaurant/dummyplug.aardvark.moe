@@ -615,6 +615,10 @@ button:not(:disabled),
   flex-direction: column;
 }
 
+#pane-right:not(.show) {
+  display: none;
+}
+
 .pane-item {
   padding: 3rem;
 }

@@ -13,7 +13,8 @@
     siteMenuButton = $('#site-menu-button'),
     settingsMenuWrap = $('#settings-menu-wrap'),
     settingsMenu = $('#settings-menu'),
-    settingsMenuButton = $('#settings-menu-button');
+    settingsMenuButton = $('#settings-menu-button'),
+    paneRight = $('#pane-right');
     siteMenuButton.addEventListener('click', e => {
         siteMenuWrap.classList.toggle('show');
         siteMenuWrap.classList.contains('show') ? siteMenu.focus() : siteMenuButton.focus();
@@ -32,6 +33,8 @@
         el.addEventListener('click', e => {
             $(`#${e.target.getAttribute('aria-controls')}`).classList.toggle('show');
             e.target.classList.toggle('active');
+
+        $$('#pane-right > .show') ? paneRight.classList.add('show') : paneRight.classList.remove('show');
         });
     });
 
