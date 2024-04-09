@@ -285,12 +285,6 @@ summary {
   cursor: pointer;
 }
 
-address {
-  font-style: normal;
-  line-height: inherit;
-  margin: 0 0 1.5rem;
-}
-
 /* pre, code, kbd */
 pre,
 code,
@@ -501,16 +495,13 @@ button:not(:disabled),
 }
 
 #site-header .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 2.25rem;
   height: 2.25rem;
   padding: 0.5rem;
 }
 
 #site-header .btn:hover,
-#site-header .btn:focus {
+#site-header .btn:not(.btn-toggle):focus {
   --btn-color: var(--color-background-primary);
 }
 
@@ -656,7 +647,6 @@ button:not(:disabled),
   font-size: var(--font-size-secondary);
   display: flex;
   flex-direction: column;
-  border-top: 2px solid var(--color-background-dark);
 }
 
 .pane-item {
@@ -695,6 +685,7 @@ button:not(:disabled),
 
   #pane-right {
 /*    font-size: var(--font-size-primary);*/
+    border-top: 2px solid var(--color-background-dark);
   }
 
   .pane-item {
