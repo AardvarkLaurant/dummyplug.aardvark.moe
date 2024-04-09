@@ -533,6 +533,7 @@ button:not(:disabled),
 
 #site-menu,
 #settings-menu {
+  color: var(--color-background-primary);
   overflow-y: auto;
   position: absolute;
   top: -1px;
@@ -541,7 +542,7 @@ button:not(:disabled),
   width: 200px;
   height: calc(100vh - 44px);
   padding-top: 1px;
-  background: var(--color-background-primary);
+  background: var(--color-background-dark);
   transition: transform 0.3s ease-in-out;
   will-change: transform;
 }
