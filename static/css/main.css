@@ -685,7 +685,7 @@ button:not(:disabled),
     border-bottom: unset;
   }
 
-  #table-of-contents {
+  #pane-right #table-of-contents {
     top: var(--height-site-header);
     width: 100%;
     height: 100%;
