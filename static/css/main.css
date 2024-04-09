@@ -652,10 +652,6 @@ button:not(:disabled),
     overflow-y: hidden;
   }
 
-  #pane-left {
-    border-right: 3px solid var(--color-background-dark);
-  }
-
   #pane-right {
 /*    font-size: var(--font-size-primary);*/
     border-top: 2px solid var(--color-background-dark);
