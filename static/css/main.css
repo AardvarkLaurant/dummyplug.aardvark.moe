@@ -644,6 +644,12 @@ button:not(:disabled),
 }
 
 @media screen and (max-width: 768px) {
+  #site-header {
+    padding: 0 0.5rem;
+    position: sticky;
+    top: 0;
+  }
+
   .reader,
   .reader.two-pane {
     grid-template-columns: 1fr;
@@ -673,6 +679,7 @@ button:not(:disabled),
     height: 30vh;
     position: fixed;
     bottom: 0;
+    overflow-y: auto;
     background: var(--color-background-primary);
     border-top: 2px solid var(--color-background-dark);
     border-bottom: unset;
