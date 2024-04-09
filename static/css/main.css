@@ -543,6 +543,7 @@ button:not(:disabled),
   overflow-y: auto;
   position: absolute;
 /*  top: -1px;*/
+  top: 0;
   left: -200px;
   max-width: 100%;
   width: 200px;
@@ -560,7 +561,7 @@ button:not(:disabled),
   left: unset;
   right: -250px;
   width: 250px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .show #site-menu {
@@ -593,17 +594,13 @@ button:not(:disabled),
 #site-menu a:hover,
 #site-menu a:focus {
   background: var(--color-accent-dark-blue);
-  color: var(--color-text-primary);
+  color: var(--color-background-primary);
 }
 
 @media screen and (max-width: 768px) {
   #site-menu {
     width: 100%;
     left: -100%;
-  }
-
-  #settings-menu-wrap {
-    top: calc(2 * var(--height-site-header));
   }
 
   #settings-menu {
