@@ -644,7 +644,8 @@ button:not(:disabled),
 }
 
 @media screen and (max-width: 768px) {
-  .reader {
+  .reader,
+  .reader.two-pane {
     grid-template-columns: 1fr;
     grid-template-rows: 54vh calc(46vh - var(--height-site-header));
     max-height: calc(100% - var(--height-site-header));
