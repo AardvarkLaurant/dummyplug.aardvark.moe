@@ -157,7 +157,7 @@ p:last-child {
 
 /* a */
 a {
-  color: var(--color-text-primary);
+  color: var(--color-accent-blue);
   text-decoration: none;
   transition: color 0.15s ease-in-out;
 }
@@ -168,14 +168,14 @@ a:focus {
 }
 
 .typography a {
-  color: var(--color-accent-light-blue);
+  color: var(--color-accent-blue);
+  text-decoration: underline;
   transition: color 0.15s linear, text-decoration 0.15s linear;
 }
 
 .typography a:hover,
 .typography a:focus {
-  color: var(--color-accent-roman-blue);
-  text-decoration: underline;
+  color: var(--color-accent-light-blue);
 }
 
 /* Inline Markup */
