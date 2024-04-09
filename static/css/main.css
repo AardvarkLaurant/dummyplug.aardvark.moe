@@ -652,6 +652,10 @@ button:not(:disabled),
     overflow-y: hidden;
   }
 
+  .reader:not(.two-pane) {
+    grid-template-rows: 1fr;
+  }
+
   #pane-right {
 /*    font-size: var(--font-size-primary);*/
     border-top: 2px solid var(--color-background-dark);
