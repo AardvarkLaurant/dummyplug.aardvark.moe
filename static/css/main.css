@@ -405,8 +405,10 @@ button:focus:not(:focus-visible) {
   justify-content: center;
 }
 
-.btn-icon:hover {
-  --btn-background: var(--color-background-tertiary);
+@media screen and (min-width: 768px) {
+  .btn-icon:hover {
+    --btn-background: var(--color-background-tertiary);
+  }
 }
 
 .btn-icon.btn-toggle.active {
