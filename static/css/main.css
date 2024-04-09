@@ -501,6 +501,10 @@ button:not(:disabled),
   padding: 0.5rem;
 }
 
+.btn.active {
+  --btn-background: var(--color-border-primary);
+}
+
 #site-header .btn:hover,
 #site-header .btn:focus {
   --btn-color: var(--color-background-primary);
