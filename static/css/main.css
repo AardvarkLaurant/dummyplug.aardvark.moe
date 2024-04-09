@@ -501,6 +501,10 @@ button:not(:disabled),
   padding: 0.5rem;
 }
 
+#site-header .btn:first-child {
+  margin-right: auto;
+}
+
 #site-menu-wrap,
 #settings-menu-wrap {
   justify-self: unset;
