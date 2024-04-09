@@ -34,7 +34,7 @@
             $(`#${e.target.getAttribute('aria-controls')}`).classList.toggle('show');
             e.target.classList.toggle('active');
 
-            $$('.pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
+            $$('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
         });
     });
 
