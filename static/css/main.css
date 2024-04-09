@@ -484,8 +484,21 @@ button:not(:disabled),
 
 #site-header {
   color: var(--color-background-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   height: var(--height-site-header);
+  padding: 0 1rem;
   background: var(--color-background-dark);
+}
+
+#site-header .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0.5rem;
 }
 
 #site-menu-wrap,
