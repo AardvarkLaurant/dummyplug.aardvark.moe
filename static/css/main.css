@@ -655,6 +655,7 @@ button:not(:disabled),
   font-size: var(--font-size-secondary);
   display: flex;
   flex-direction: column;
+  border-top: 2px solid var(--color-background-dark);
 }
 
 .pane-item {
@@ -682,7 +683,7 @@ button:not(:disabled),
 @media screen and (max-width: 768px) {
   .reader {
     grid-template-columns: 1fr;
-    grid-template-rows: 1.5fr 1fr;
+    grid-template-rows: calc(60vh - (0.5 * var(--height-site-header))) calc(40vh - (0.5 * var(--height-site-header)));
     max-height: calc(100% - var(--height-site-header));
     overflow-y: hidden;
   }
