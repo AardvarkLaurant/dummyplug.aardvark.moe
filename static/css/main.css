@@ -433,6 +433,10 @@ button:focus:not(:focus-visible) {
   --btn-color-accent: var(--color-accent-blue);
 }
 
+.btn-icon.active {
+  --btn-background: var(--color-border-primary);
+}
+
 .btn-icon:hover,
 .btn-icon:focus {
   --btn-background: var(--color-background-tertiary);
@@ -499,10 +503,6 @@ button:not(:disabled),
   width: 2.25rem;
   height: 2.25rem;
   padding: 0.5rem;
-}
-
-.btn.active {
-  --btn-background: var(--color-border-primary);
 }
 
 #site-header .btn:hover,
