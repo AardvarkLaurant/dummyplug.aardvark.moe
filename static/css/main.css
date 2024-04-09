@@ -627,12 +627,12 @@ button:not(:disabled),
   flex-direction: column;
 }
 
-.pane-item:not(.show) {
-  display: none;
-}
-
 .pane-item {
   padding: 3rem;
+}
+
+.pane-item:not(.show) {
+  display: none;
 }
 
 #pane-right > .pane-item {
@@ -647,4 +647,14 @@ button:not(:disabled),
 #footnotes {
   flex-basis: 48%;
   flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+  #pane-left {
+    border-right: 3px solid var(--color-background-dark);
+  }
+
+  .pane-item {
+    padding: 1rem;
+  }
 }
