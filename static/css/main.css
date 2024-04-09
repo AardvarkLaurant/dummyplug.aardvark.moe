@@ -605,8 +605,10 @@ button:not(:disabled),
   overflow-y: auto;
 }
 
-#pane-left {
-
+.reader:not(.two-pane) #pane-left {
+  max-width: 850px;
+  max-height: unset;
+  margin: 0 auto;
 }
 
 #pane-right {
