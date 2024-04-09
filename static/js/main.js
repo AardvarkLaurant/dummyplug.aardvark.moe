@@ -11,7 +11,7 @@
     siteMenuWrap = $('#site-menu-wrap'),
     siteMenu = $('#site-menu'),
     siteMenuButton = $('#site-menu-button'),
-    settingsMenuWrap = $('settings-menu-wrap'),
+    settingsMenuWrap = $('#settings-menu-wrap'),
     settingsMenu = $('#settings-menu'),
     settingsMenuButton = $('#settings-menu-button');
     siteMenuButton.addEventListener('click', e => {
