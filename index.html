@@ -5,11 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dummy Plug</title>
     <link rel="stylesheet" href="/static/css/main.css">
+    <link rel="canonical" href="/">
     <link rel="icon" href="/static/img/favicon.ico">
     <!-- <link rel="manifest" href="/dummyplug.webmanifest"> -->
     <meta name="theme-color" content="#992d29">
+    <meta name="format-detection" content="telephone=no">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Dummy Plug">
+    <meta property="og:url" content="/">
+    <meta property="og:title" content="Dummy Plug">
+    <meta property="og:description" content="A web-based document reader inspired by Dieter Ebner's Living Book project.">
+    <meta name="description" content="A web-based document reader inspired by Dieter Ebner's Living Book project.">
+    <!-- <meta property="og:image" content="">
+    <meta property="og:image:alt" content=""> -->
 </head>
 <body>
+    <header id="site-header">
+        <!-- burger -->
+        <!-- pane toggle (maybe redundant) -->
+        <!-- toc toggle -->
+        <!-- footnotes toggle -->
+        <!-- references toggle -->
+        <!-- Settings menu -->
+    </header>
+
+    <!-- Global Navigation -->
+    <div id="site-menu-wrap">
+        <nav id="site-menu">
+            <ul>
+                <li>
+                    <a href="/">Home</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Reader settings for user preferences -->
+    <div id="settings-menu-wrap">
+        <div id="settings-menu">
+
+        </div>
+    </div>
+
     <main>
         <article class="reader">
             <div id="pane-left" class="pane">
@@ -32,14 +70,18 @@
                     <p>Morbi vestibulum pharetra nisl sed convallis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec at suscipit ligula, nec vulputate diam. Vivamus pretium velit sapien, non hendrerit libero pulvinar in. Duis scelerisque tortor sed enim molestie dapibus. Aliquam placerat enim sit amet diam vehicula mattis. Suspendisse mi tellus, aliquet a ex eget, efficitur bibendum dui. In et mi tincidunt diam egestas placerat. Proin sit amet auctor erat, in dignissim nunc. Quisque interdum molestie est nec bibendum. Nam consectetur faucibus risus quis malesuada.</p>
                 </div>
             </div>
-            
+
             <div id="pane-right" class="pane">
+                <div id="table-of-contents">
+
+                </div>
+
                 <div id="footnotes">
 
                 </div>
 
                 <div id="references">
-                    
+
                 </div>
             </div>
         </article>

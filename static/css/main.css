@@ -482,6 +482,14 @@ button:not(:disabled),
   cursor: pointer;
 }
 
+#site-header {
+  color: var(--color-background-primary);
+  height: var(--height-site-header);
+  position: sticky;
+  top: 0;
+  background: var(--color-background-dark);
+}
+
 .reader {
   display: grid;
   grid-template-columns: 1fr 1fr;
