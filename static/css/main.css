@@ -592,12 +592,12 @@ button:not(:disabled),
 
 .reader {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1fr;
   position: relative;
 }
 
-.reader-2 {
-
+.reader.two-pane {
+  grid-template-columns: 1.4fr 1fr;
 }
 
 .pane {
@@ -615,7 +615,7 @@ button:not(:disabled),
   flex-direction: column;
 }
 
-#pane-right:not(.show) {
+.reader:not(.two-pane) #pane-right {
   display: none;
 }
 
