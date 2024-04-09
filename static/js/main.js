@@ -10,7 +10,10 @@
     docBody = document.body,
     siteMenuWrap = $('#site-menu-wrap'),
     siteMenu = $('#site-menu'),
-    siteMenuButton = $('#site-menu-button');
+    siteMenuButton = $('#site-menu-button'),
+    settingsMenuWrap = $('settings-menu-wrap'),
+    settingsMenu = $('#settings-menu'),
+    settingsMenuButton = $('#settings-menu-button');
     siteMenuButton.addEventListener('click', e => {
         siteMenuWrap.classList.toggle('show');
         siteMenuWrap.classList.contains('show') ? siteMenu.focus() : siteMenuButton.focus();
