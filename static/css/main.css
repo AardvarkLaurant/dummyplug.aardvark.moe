@@ -434,8 +434,12 @@ button:focus:not(:focus-visible) {
 }
 
 .btn-icon:hover,
-.btn-icon:focus:not(.active) {
+.btn-icon:focus {
   --btn-background: var(--color-background-tertiary);
+}
+
+.btn-toggle:focus {
+  --btn-background: transparent;
 }
 
 .btn-icon.active {
@@ -679,6 +683,8 @@ button:not(:disabled),
   .reader {
     grid-template-columns: 1fr;
     grid-template-rows: 1.5fr 1fr;
+    max-height: calc(100% - var(--height-site-header));
+    overflow-y: hidden;
   }
 
   #pane-left {
