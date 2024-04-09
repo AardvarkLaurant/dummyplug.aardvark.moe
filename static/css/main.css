@@ -405,8 +405,9 @@ button:focus:not(:focus-visible) {
   justify-content: center;
 }
 
-@media screen and (min-width: 768px) {
-  .btn-icon:hover {
+@media screen and (hover: hover) and (pointer: fine) {
+  .btn-icon:hover,
+  .btn-icon:focus {
     --btn-background: var(--color-background-tertiary);
   }
 }
@@ -640,7 +641,7 @@ button:not(:disabled),
 @media screen and (max-width: 768px) {
   .reader {
     grid-template-columns: 1fr;
-    grid-template-rows: calc(60vh - (0.5 * var(--height-site-header))) calc(40vh - (0.5 * var(--height-site-header)));
+    grid-template-rows: calc(60vh - * var(--height-site-header)) calc(40vh - var(--height-site-header));
     max-height: calc(100% - var(--height-site-header));
     overflow-y: hidden;
   }
