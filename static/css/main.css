@@ -631,7 +631,7 @@ button:not(:disabled),
 
 .reader {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
 }
 
 .reader-2 {
@@ -648,6 +648,7 @@ button:not(:disabled),
 }
 
 #pane-right {
+  font-size: var(--font-size-secondary);
   display: flex;
   flex-direction: column;
 }
@@ -677,6 +678,10 @@ button:not(:disabled),
 @media screen and (max-width: 768px) {
   #pane-left {
     border-right: 3px solid var(--color-background-dark);
+  }
+
+  #pane-right {
+    font-size: var(--font-size-primary);
   }
 
   .pane-item {
