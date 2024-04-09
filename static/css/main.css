@@ -482,6 +482,7 @@ button:not(:disabled),
 }
 
 #site-header {
+  --btn-color: var(--color-background-primary);
   color: var(--color-background-primary);
   display: flex;
   align-items: center;
@@ -499,6 +500,11 @@ button:not(:disabled),
   height: 2.25rem;
   padding: 0.5rem;
 }
+
+/*#site-header .btn:hover,
+#site-header .btn:focus {
+  --btn-color: var(--color-background-primary);
+}*/
 
 #site-header .btn:first-child {
   margin-right: auto;
