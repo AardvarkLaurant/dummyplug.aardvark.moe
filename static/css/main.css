@@ -406,8 +406,7 @@ button:focus:not(:focus-visible) {
 }
 
 @media screen and (hover: hover) and (pointer: fine) {
-  .btn-icon:hover,
-  .btn-icon:focus {
+  .btn-icon:hover {
     --btn-background: var(--color-background-tertiary);
   }
 }
