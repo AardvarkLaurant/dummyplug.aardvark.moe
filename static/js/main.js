@@ -28,6 +28,11 @@
     settingsMenuButton && settingsMenuWrap.addEventListener('click', e => {
         !e.target.closest('#settings-menu-button') && !e.target.closest('#settings-menu') && settingsMenuWrap.classList.remove('show');
     });
+    $$('.btn-toggle').forEach(el => {
+        el.addEventListener('click', e => {
+            $(`#${e.target.ariaControls}`).classList.toggle('show');
+        });
+    });
 
     window.DummyPlug = {
         Storage: {

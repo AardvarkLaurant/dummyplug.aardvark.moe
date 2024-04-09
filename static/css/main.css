@@ -618,10 +618,6 @@ button:not(:disabled),
   overflow-y: auto;
 }
 
-.pane > * {
-  padding: 3rem;
-}
-
 #pane-left {
 
 }
@@ -631,18 +627,26 @@ button:not(:disabled),
   flex-direction: column;
 }
 
-#pane-right > * {
+.pane-item:not(.show) {
+  display: none;
+}
+
+.pane-item {
+  padding: 3rem;
+}
+
+#pane-right > .pane-item {
   flex-grow: 1;
   max-height: 33.333333333%;
   overflow-y: auto;
+}
+
+#pane-right > .pane-item:not(:last-child) {
+  border-bottom: 2px solid var(--color-background-dark);
 }
 
 #footnotes {
   flex-basis: 48%;
   flex-shrink: 0;
   max-height: 48%;
-}
-
-#pane-right > *:not(:last-child) {
-  border-bottom: 2px solid var(--color-background-dark);
 }
