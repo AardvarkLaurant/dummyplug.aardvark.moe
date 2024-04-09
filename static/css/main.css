@@ -489,6 +489,7 @@ button:not(:disabled),
   height: var(--height-site-header);
   padding: 0 1rem;
   background: var(--color-background-dark);
+  z-index: 99999;
 }
 
 #site-header .btn {
@@ -618,7 +619,7 @@ button:not(:disabled),
 }
 
 .pane > * {
-  padding: 1.5rem;
+  padding: 3rem;
 }
 
 #pane-left {
@@ -632,6 +633,14 @@ button:not(:disabled),
 
 #pane-right > * {
   flex-grow: 1;
+  max-height: 33.333333333%;
+  overflow-y: auto;
+}
+
+#footnotes {
+  flex-basis: 48%;
+  flex-shrink: 0;
+  max-height: 48%;
 }
 
 #pane-right > *:not(:last-child) {
