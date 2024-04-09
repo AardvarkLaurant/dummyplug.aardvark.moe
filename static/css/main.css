@@ -384,8 +384,7 @@ button:focus:not(:focus-visible) {
   transition: color .15s ease-in-out, fill .15s ease-in-out, background .15s ease-in-out, border-color .15s ease-in-out;
 }
 
-.btn:hover,
-.btn:focus {
+.btn:hover {
   --btn-color: var(--color-text-primary);
   color: var(--btn-color);
   fill: var(--btn-color);
@@ -406,13 +405,8 @@ button:focus:not(:focus-visible) {
   justify-content: center;
 }
 
-.btn-icon:hover,
-.btn-icon:focus {
+.btn-icon:hover {
   --btn-background: var(--color-background-tertiary);
-}
-
-.btn-icon.btn-toggle:focus {
-  --btn-background: transparent;
 }
 
 .btn-icon.btn-toggle.active {
