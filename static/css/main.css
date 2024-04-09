@@ -645,7 +645,7 @@ button:not(:disabled),
 
 @media screen and (max-width: 768px) {
   #site-header {
-    padding: 0 0.5rem;
+    padding: 0;
     position: sticky;
     top: 0;
   }
