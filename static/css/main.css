@@ -433,13 +433,13 @@ button:focus:not(:focus-visible) {
   --btn-color-accent: var(--color-accent-blue);
 }
 
-.btn-icon.active {
-  --btn-background: var(--color-border-primary);
-}
-
 .btn-icon:hover,
 .btn-icon:focus {
   --btn-background: var(--color-background-tertiary);
+}
+
+.btn-icon.active {
+  --btn-background: var(--color-border-primary);
 }
 
 .btn-icon-invert:hover,
@@ -676,6 +676,11 @@ button:not(:disabled),
 }
 
 @media screen and (max-width: 768px) {
+  .reader {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.5fr 1fr;
+  }
+
   #pane-left {
     border-right: 3px solid var(--color-background-dark);
   }
