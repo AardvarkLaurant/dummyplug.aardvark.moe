@@ -400,31 +400,10 @@ button:focus:not(:focus-visible) {
   --btn-border-radius: 100%;
 }
 
-.btn-transparent {
-  border: 2px solid transparent;
-}
-
-.btn-transparent:hover:not([disabled]),
-.btn-transparent:focus:not([disabled]) {
-  --btn-background: var(--btn-color-accent);
-  --btn-border: 2px solid var(--btn-color-accent);
-}
-
-.btn-icon,
-.btn-icon-invert,
-.btn-icon-solid {
+.btn-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.btn-icon-solid {
-  --btn-background: var(--color-background-tertiary);
-}
-
-.btn-icon.btn-primary:hover,
-.btn-icon.btn-primary:focus {
-  --btn-color-accent: var(--color-accent-blue);
 }
 
 .btn-icon:hover,
@@ -432,21 +411,12 @@ button:focus:not(:focus-visible) {
   --btn-background: var(--color-background-tertiary);
 }
 
-.btn-toggle:focus {
+.btn-icon.btn-toggle:focus {
   --btn-background: transparent;
 }
 
 .btn-icon.active {
   --btn-background: var(--color-border-primary);
-}
-
-.btn-icon-invert:hover,
-.btn-icon-invert:focus,
-.btn-icon-solid:hover,
-.btn-icon-solid:focus {
-  --btn-background: var(--btn-color-accent);
-  color: var(--color-text-primary);
-  fill: var(--color-text-primary);
 }
 
 input,
@@ -501,7 +471,7 @@ button:not(:disabled),
 }
 
 #site-header .btn:hover,
-#site-header .btn:not(.btn-toggle):focus {
+#site-header .btn:focus {
   --btn-color: var(--color-background-primary);
 }
 
