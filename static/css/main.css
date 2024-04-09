@@ -647,7 +647,7 @@ button:not(:disabled),
   .reader,
   .reader.two-pane {
     grid-template-columns: 1fr;
-    grid-template-rows: 54vh calc(46vh - var(--height-site-header));
+    grid-template-rows: 70vh;
     /*max-height: calc(100% - var(--height-site-header));
     overflow-y: hidden;*/
   }
@@ -665,11 +665,19 @@ button:not(:disabled),
     padding: 0.5rem;
   }
 
-  #table-of-contents {
+  #pane-right .pane-item {
+    max-height: calc(30vh - var(--height-site-header));
     position: absolute;
+    bottom: 0;
+    background: var(--color-background-primary);
+    border-top: 2px solid var(--color-background-dark);
+    border-bottom: unset;
+  }
+
+  #table-of-contents {
     top: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-background-primary);
+    max-height: unset;
   }
 }
