@@ -670,7 +670,7 @@ button:not(:disabled),
 }
 
 #footnotes {
-  flex-basis: 48%;
+  flex-basis: 52%;
   flex-shrink: 0;
 }
 
