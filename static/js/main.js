@@ -1,0 +1,43 @@
+(function() {
+    "use strict";
+    const on = addEventListener,
+    $ = q => {
+        return document.querySelector(q)
+    },
+    $$ = q => {
+        return document.querySelectorAll(q)
+    },
+    docBody = document.body,
+    siteMenuWrap = $('#site-menu-wrap'),
+    siteMenu = $('#site-menu'),
+    siteMenuButton = $('#site-menu-button');
+    siteMenuButton.addEventListener('click', e => {
+        siteMenuWrap.classList.toggle('show');
+        siteMenuWrap.classList.contains('show') ? siteMenu.focus() : siteMenuButton.focus();
+    });
+    siteMenuWrap.addEventListener('click', e => {
+        !e.target.closest('#site-menu-button') && !e.target.closest('#site-menu') && siteMenuWrap.classList.remove('show');
+    });
+
+    window.DummyPlug = {
+        Storage: {
+            Get: function(e) {
+                try {
+                    return window.localStorage.getItem(e)
+                } catch {
+                    return null
+                }
+            },
+            Set: function(e, t) {
+                try {
+                    window.localStorage.setItem(e, t)
+                } catch {}
+            },
+            Remove: function(e) {
+                try {
+                    window.localStorage.removeItem(e)
+                } catch {}
+            }
+        }
+    }
+})();
