@@ -637,7 +637,6 @@ button:not(:disabled),
 
 #pane-right > .pane-item {
   flex-grow: 1;
-  max-height: 33.333333333%;
   overflow-y: auto;
 }
 
@@ -648,5 +647,4 @@ button:not(:disabled),
 #footnotes {
   flex-basis: 48%;
   flex-shrink: 0;
-  max-height: 48%;
 }
