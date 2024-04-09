@@ -485,9 +485,100 @@ button:not(:disabled),
 #site-header {
   color: var(--color-background-primary);
   height: var(--height-site-header);
-  position: sticky;
-  top: 0;
   background: var(--color-background-dark);
+}
+
+#site-menu-wrap,
+#settings-menu-wrap {
+  justify-self: unset;
+  font-size: var(--font-size-secondary);
+  visibility: hidden;
+  position: fixed;
+  height: calc(100vh - var(--height-site-header));
+  top: var(--height-site-header);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  transition-delay: 0s, 0.3s;
+  transition: background 0.3s ease, visibility 0.3s ease-in-out;
+  z-index: 99999;
+}
+
+#site-menu-wrap.show {
+  visibility: visible;
+  background: rgb(0 0 0 / 85%);
+  transition-delay: 0s;
+}
+
+#settings-menu-wrap.show {
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+#site-menu,
+#settings-menu {
+  overflow-y: auto;
+  position: absolute;
+  top: -1px;
+  left: -200px;
+  max-width: 100%;
+  width: 200px;
+  height: calc(100vh - 44px);
+  padding-top: 1px;
+  background: var(--color-background-primary);
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
+}
+
+#settings-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  left: unset;
+  right: -250px;
+  width: 250px;
+  padding: 1rem;
+}
+
+.show #site-menu {
+  transform: translateX(200px);
+  transition-delay: 0s;
+}
+
+.show #settings-menu {
+  transform: translateX(-250px);
+  transition-delay: 0s;
+}
+
+@media screen and (max-width: 768px) {
+  #site-menu {
+    width: 100%;
+    left: -100%;
+  }
+
+  #settings-menu-wrap {
+    height: calc(100vh - (2 * var(--height-site-header)));
+    top: calc(2 * var(--height-site-header));
+  }
+
+  #settings-menu {
+    height: calc(100vh + 2px - (2 * var(--height-site-header)));
+    width: 100%;
+    right: -100%;
+    top: -2px;
+  }
+
+  .show #site-menu {
+    transform: translateX(100%);
+  }
+
+  .show #settings-menu {
+    transform: translateX(-100%);
+  }
+}
+
+#site-menu::-webkit-scrollbar {
+  display: none;
 }
 
 .reader {
@@ -500,7 +591,9 @@ button:not(:disabled),
 }
 
 .pane {
+  max-height: calc(100vh - var(--height-site-header));
   padding: 1.5rem;
+  overflow-y: auto;
 }
 
 #pane-left {

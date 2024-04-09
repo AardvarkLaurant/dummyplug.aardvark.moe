@@ -18,6 +18,13 @@
     siteMenuWrap.addEventListener('click', e => {
         !e.target.closest('#site-menu-button') && !e.target.closest('#site-menu') && siteMenuWrap.classList.remove('show');
     });
+    settingsMenuButton && settingsMenuButton.addEventListener('click', e => {
+        settingsMenuWrap.classList.toggle('show');
+        settingsMenuWrap.classList.contains('show') ? settingsMenu.focus() : settingsMenuButton.focus();
+    });
+    settingsMenuButton && settingsMenuWrap.addEventListener('click', e => {
+        !e.target.closest('#settings-menu-button') && !e.target.closest('#settings-menu') && settingsMenuWrap.classList.remove('show');
+    });
 
     window.DummyPlug = {
         Storage: {
