@@ -621,6 +621,7 @@ button:not(:disabled),
 
 .pane-item {
   padding: 3rem;
+  position: relative;
 }
 
 .pane-item:not(.show) {
