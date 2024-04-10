@@ -39,7 +39,7 @@
   --box-shadow-light: 0 0 8px rgb(0 0 0 / 15%);
  
   /* Components */
-  --height-site-header: 3rem;
+  --height-site-header: 2.5rem;
 
   /* Root Settings */
   -moz-tab-size: 4;
@@ -461,8 +461,8 @@ button:not(:disabled),
 }
 
 #site-header .btn {
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
   padding: 0.5rem;
 }
 
@@ -507,7 +507,6 @@ button:not(:disabled),
   color: var(--color-background-primary);
   overflow-y: auto;
   position: absolute;
-/*  top: -1px;*/
   top: 0;
   left: -200px;
   max-width: 100%;
@@ -526,7 +525,7 @@ button:not(:disabled),
   left: unset;
   right: -250px;
   width: 250px;
-  padding: 0.5rem;
+  padding: 1rem;
 }
 
 .show #site-menu {
@@ -654,8 +653,6 @@ button:not(:disabled),
   .reader.two-pane {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    /*max-height: calc(100% - var(--height-site-header));
-    overflow-y: hidden;*/
   }
 
   .reader:not(.two-pane) {
@@ -667,12 +664,11 @@ button:not(:disabled),
   }
 
   #pane-right {
-/*    font-size: var(--font-size-primary);*/
     border-top: 2px solid var(--color-background-dark);
   }
 
   .pane-item {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 
   #pane-right .pane-item {

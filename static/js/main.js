@@ -59,4 +59,11 @@
             }
         }
     }
+
+    // Service Worker
+    'serviceWorker' in navigator && navigator.serviceWorker.register('/service-worker.js', {
+        scope: '/'
+    }).catch(e => {
+        console.error(e);
+    });
 })();
