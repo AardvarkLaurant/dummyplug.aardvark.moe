@@ -3,7 +3,7 @@
     "description": "A web-based document reader inspired by Dieter Ebner's Living Book project.",
     "start_url": "/",
     "display": "standalone",
-    "theme_color": "#992d29",
+    "theme_color": "#121212",
     "background_color": "#ffffff",
     "icons": [
         {
