@@ -31,8 +31,11 @@
     });
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', e => {
-            $(`#${e.target.getAttribute('aria-controls')}`).classList.toggle('show');
             e.target.classList.toggle('active');
+
+            const controlledElement = $(`#${e.target.getAttribute('aria-controls')}`);
+            controlledElement.classList.toggle('show');
+            controlledElement.focus();
 
             $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
         });
