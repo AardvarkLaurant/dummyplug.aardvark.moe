@@ -4,39 +4,27 @@
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#992d29",
-    "background_color": "#ffffff"
-    // "icons": [
-    //     {
-    //         "src": "",
-    //         "type": "image/png",
-    //         "purpose": "any",
-    //         "sizes": "16x16"
-    //     },
-    //     {
-    //         "src": "",
-    //         "type": "image/png",
-    //         "purpose": "any",
-    //         "sizes": "32x32"
-    //     },
-    //     {
-    //         "src": "",
-    //         "type": "image/png",
-    //         "purpose": "any",
-    //         "sizes": "192x192"
-    //     },
-    //     {
-    //         "src": "",
-    //         "type": "image/png",
-    //         "purpose": "any",
-    //         "sizes": "512x512"
-    //     },
-    //     {
-    //         "src": "",
-    //         "type": "image/png",
-    //         "purpose": "maskable",
-    //         "sizes": "512x512"
-    //     }
-    // ],
+    "background_color": "#ffffff",
+    "icons": [
+        {
+            "src": "static/img/icon_16.png",
+            "type": "image/png",
+            "purpose": "any",
+            "sizes": "16x16"
+        },
+        {
+            "src": "static/img/icon_32.png",
+            "type": "image/png",
+            "purpose": "any",
+            "sizes": "32x32"
+        },
+        {
+            "src": "static/img/icon_192.png",
+            "type": "image/png",
+            "purpose": "any",
+            "sizes": "192x192"
+        }
+    ]
     // "shortcuts": [
     //     {
     //         "name": "Landau",
