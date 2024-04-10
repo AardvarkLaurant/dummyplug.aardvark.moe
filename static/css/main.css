@@ -126,7 +126,6 @@ h6, .h6 {
 
 h1, .h1 {
   font-size: var(--font-size-h1);
-  margin: 0 0 0.5rem;
 }
 
 h2, .h2 {
@@ -273,7 +272,7 @@ blockquote {
 }
 
 blockquote p:not(:last-child) {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.75rem;
 }
 
 details {
@@ -454,6 +453,7 @@ button:not(:disabled),
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
   height: var(--height-site-header);
   padding: 0 0.5rem;
   background: var(--color-background-dark);
@@ -477,7 +477,6 @@ button:not(:disabled),
 
 #site-menu-wrap,
 #settings-menu-wrap {
-  justify-self: unset;
   font-size: var(--font-size-secondary);
   visibility: hidden;
   position: fixed;
@@ -600,11 +599,11 @@ button:not(:disabled),
 }
 
 .pane {
-  max-height: calc(100vh - var(--height-site-header));
   overflow-y: auto;
+  max-height: calc(100vh - var(--height-site-header));
 }
 
-.reader:not(.two-pane) #pane-left {
+.reader:not(.two-pane) > #pane-left {
   max-width: 850px;
   max-height: unset;
   margin: 0 auto;
@@ -616,7 +615,7 @@ button:not(:disabled),
   flex-direction: column;
 }
 
-.reader:not(.two-pane) #pane-right {
+.reader:not(.two-pane) > #pane-right {
   display: none;
 }
 
@@ -644,7 +643,6 @@ button:not(:disabled),
 
 @media screen and (max-width: 768px) {
   #site-header {
-    padding: 0;
     position: sticky;
     top: 0;
   }
@@ -652,18 +650,18 @@ button:not(:disabled),
   .reader,
   .reader.two-pane {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-  }
-
-  .reader:not(.two-pane) {
-    grid-template-rows: 1fr;
   }
 
   #pane-left {
     max-height: unset;
   }
 
+  .reader.two-pane > #pane-left {
+    margin-bottom: 30vh;
+  }
+
   #pane-right {
+    background: var(--color-background-primary);
     border-top: 2px solid var(--color-background-dark);
   }
 
@@ -671,17 +669,16 @@ button:not(:disabled),
     padding: 1rem;
   }
 
-  #pane-right .pane-item {
+  #pane-right > .pane-item {
+    overflow-y: auto;
     height: 30vh;
     position: fixed;
     bottom: 0;
-    overflow-y: auto;
     background: var(--color-background-primary);
-    border-top: 2px solid var(--color-background-dark);
     border-bottom: unset;
   }
 
-  #pane-right #table-of-contents {
+  #pane-right > #table-of-contents {
     width: 100%;
     height: calc(100% - var(--height-site-header));
     overscroll-behavior-y: contain;
