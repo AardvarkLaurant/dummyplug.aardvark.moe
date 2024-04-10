@@ -675,6 +675,7 @@ button:not(:disabled),
     position: fixed;
     bottom: 0;
     background: var(--color-background-primary);
+    border-top: 2px solid var(--color-background-dark);
     border-bottom: unset;
   }
 
