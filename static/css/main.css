@@ -456,6 +456,8 @@ button:not(:disabled),
   width: 100%;
   height: var(--height-site-header);
   padding: 0 0.5rem;
+  position: sticky;
+  top: 0;
   background: var(--color-background-dark);
   z-index: 99999;
 }
