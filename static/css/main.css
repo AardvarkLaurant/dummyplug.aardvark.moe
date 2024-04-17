@@ -549,6 +549,7 @@ button:not(:disabled),
 
 #site-menu a {
   font-weight: 500;
+  color: var(--color-background-primary);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -560,6 +561,15 @@ button:not(:disabled),
 #site-menu a:focus {
   background: var(--color-accent-dark-blue);
   color: var(--color-background-primary);
+}
+
+#site-menu a.book {
+  gap: 1rem;
+}
+
+#site-menu a img {
+  width: 100%;
+  max-width: 72px;
 }
 
 @media screen and (max-width: 500px) {
