@@ -553,7 +553,7 @@ button:not(:disabled),
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 0.75rem 0.75rem 1.5rem;
+  padding: 1rem;
   transition: 0.15s color ease-in-out, 0.15s background ease-in-out;
 }
 
