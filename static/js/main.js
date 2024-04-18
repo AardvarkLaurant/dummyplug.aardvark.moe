@@ -40,6 +40,17 @@
             window.DummyPlug.references = $('#references');
             window.DummyPlug.restoreButtonState();
         },
+        buttonToggle: e => {
+            e.target.classList.toggle('active');
+
+            const controlledElement = $(`#${e.target.getAttribute('aria-controls')}`);
+            controlledElement.classList.toggle('show');
+            controlledElement.focus();
+
+            $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
+
+            window.DummyPlug.recordButtonState(e.target);
+        },
         handleLinkNavigation: e => {
             e.preventDefault();
 
@@ -92,9 +103,14 @@
                 });
             }
 
-            buttonStates.forEach(key => {
-                $(key)
-            });
+            for (let id in buttonStates) {
+                const el = $(`#${id}`);
+                if () {
+
+                } else {
+
+                }
+            }
         },
         Storage: {
             Get: function(e) {
@@ -124,17 +140,7 @@
     window.addEventListener('popstate', window.DummyPlug.handlePopState);
 
     $$('.btn-toggle').forEach(el => {
-        el.addEventListener('click', e => {
-            e.target.classList.toggle('active');
-
-            const controlledElement = $(`#${e.target.getAttribute('aria-controls')}`);
-            controlledElement.classList.toggle('show');
-            controlledElement.focus();
-
-            $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
-
-            window.DummyPlug.recordButtonState(e.target);
-        });
+        el.addEventListener('click', window.DummyPlug.buttonToggle);
     });
 
     // Service Worker
