@@ -92,22 +92,22 @@
         restoreButtonState: () => {
             $$('.btn-toggle').forEach(el => {
                 let buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
-                console.log(buttonState);
+
                 if (buttonState === null) {
+                    console.log('null: ' + buttonState);
                     window.DummyPlug.recordButtonState(el);
                     buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
                 } 
 
-                if (buttonState) {
-                    console.log('active');
-                    el.classList.add('active');
-                    $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
-                } else {
-                    console.log('inactive');
+                if (buttonState == 0) {
+                    console.log('inactive: ' + buttonState);
                     el.classList.remove('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
+                } else {
+                    console.log('active: '  + buttonState);
+                    el.classList.add('active');
+                    $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
                 }
-                console.log(buttonState);
             });
         },
         Storage: {
