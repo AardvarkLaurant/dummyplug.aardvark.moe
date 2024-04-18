@@ -29,17 +29,6 @@
     settingsMenuButton && settingsMenuWrap.addEventListener('click', e => {
         !e.target.closest('#settings-menu-button') && !e.target.closest('#settings-menu') && settingsMenuWrap.classList.remove('show');
     });
-    $$('.btn-toggle').forEach(el => {
-        el.addEventListener('click', e => {
-            e.target.classList.toggle('active');
-
-            const controlledElement = $(`#${e.target.getAttribute('aria-controls')}`);
-            controlledElement.classList.toggle('show');
-            controlledElement.focus();
-
-            $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
-        });
-    });
 
     window.DummyPlug = {
         content: null,
@@ -49,16 +38,26 @@
             window.DummyPlug.content = $('#article-body');
             window.DummyPlug.footnotes = $('#footnotes');
             window.DummyPlug.references = $('#references');
+            window.DummyPlug.restoreButtonState();
         },
-        handleNavigation: e => {
+        handleLinkNavigation: e => {
             e.preventDefault();
 
+            // This is a naive implementation to show how it could work.
+            // Right now the link in the table of contents just links directly to a JSON,
+            // but you would ideally communicate to the server that this is an AJAX request,
+            // and so the server would send back a JSON representation of the page instead
+            // of a full HTML document.
+            // 
             const route = `${e.target.href}`;
 
+            window.DummyPlug.navigate(route);
+        },
+        navigate: route => {
             fetch(route)
             .then(response => response.json())
             .then(data => {
-                window.history.pushState({}, '', e.target.href);
+                window.history.pushState({route}, '', e.target.href);
 
                 document.title = data.title;
                 window.DummyPlug.content.innerHTML = data.content;
@@ -66,11 +65,36 @@
                 window.DummyPlug.references.innerHTML = data.references;
             })
             .catch(error => {
-
+                console.log(error);
             });
         },
-        recordButtonState: e => {
+        handleBackNavigation: e => {
+            const { route } = e.state.route;
+            if (route) {
+                window.DummyPlug.navigate(route);
+            }
+        },
+        recordButtonState: el => {
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
 
+            buttonStates[el.id] = el.classList.contains('active') ? 1 : 0;
+
+            buttonStatesString = JSON.stringify(buttonStates);
+
+            window.DummyPlug.Storage.Set('buttonStates', buttonStatesString);
+        },
+        restoreButtonState: () => {
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates');
+
+            if (!buttonStates) {
+                $$('.btn-toggle').forEach(button => {
+                    buttonStates[button.id]: button.classList.contains('active') ? 1 : 0;
+                });
+            }
+
+            buttonStates.forEach(key => {
+                $(key)
+            });
         },
         Storage: {
             Get: function(e) {
@@ -93,8 +117,24 @@
         }
     }
     window.DummyPlug.init();
+
     $$('#table-of-contents a').forEach(el => {
-        el.addEventListener('click', window.DummyPlug.handleNavigation);
+        el.addEventListener('click', window.DummyPlug.handleLinkNavigation);
+    });
+    window.addEventListener('popstate', window.DummyPlug.handleBackNavigation);
+
+    $$('.btn-toggle').forEach(el => {
+        el.addEventListener('click', e => {
+            e.target.classList.toggle('active');
+
+            const controlledElement = $(`#${e.target.getAttribute('aria-controls')}`);
+            controlledElement.classList.toggle('show');
+            controlledElement.focus();
+
+            $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
+
+            window.DummyPlug.recordButtonState(e.target);
+        });
     });
 
     // Service Worker
