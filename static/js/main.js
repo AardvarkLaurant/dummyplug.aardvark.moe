@@ -86,7 +86,7 @@
             }
         },
         recordButtonState: el => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates');
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
 
             buttonStates[el.id] = el.classList.contains('active') ? 1 : 0;
 
@@ -110,7 +110,7 @@
             console.log(buttonStates);
 
             for (let id in buttonStates) {
-                const el = $('#' + id);
+                const el = $('#' + [id]);
                 if (buttonStates[id]) {
                     el.classList.add('active');
                     const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
