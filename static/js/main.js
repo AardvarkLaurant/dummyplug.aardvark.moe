@@ -91,17 +91,20 @@
         restoreButtonState: () => {
             $$('.btn-toggle').forEach(el => {
                 let buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
-
+                console.log(buttonState);
                 if (buttonState === null) {
                     window.DummyPlug.recordButtonState(el);
                     buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
-                } else if (buttonState === 0) {
+                } 
+
+                if (buttonState === 0) {
                     el.classList.remove('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
                 } else {
                     el.classList.add('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
                 }
+                console.log(buttonState);
             });
         },
         Storage: {
