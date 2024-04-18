@@ -68,7 +68,7 @@
             fetch(route)
             .then(response => response.json())
             .then(data => {
-                window.history.pushState({route}, '', route);
+                window.history.pushState({ route }, '', route);
 
                 document.title = data.title;
                 window.DummyPlug.content.innerHTML = data.content;
