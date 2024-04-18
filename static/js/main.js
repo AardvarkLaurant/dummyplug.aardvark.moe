@@ -68,7 +68,7 @@
             fetch(route)
             .then(response => response.json())
             .then(data => {
-                window.history.pushState({route}, '', e.target.href);
+                window.history.pushState({route}, '', route);
 
                 document.title = data.title;
                 window.DummyPlug.content.innerHTML = data.content;
@@ -94,17 +94,14 @@
                 let buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
 
                 if (buttonState === null) {
-                    console.log('null: ' + buttonState);
                     window.DummyPlug.recordButtonState(el);
                     buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
                 } 
 
                 if (buttonState == 0) {
-                    console.log('inactive: ' + buttonState);
                     el.classList.remove('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
                 } else {
-                    console.log('active: '  + buttonState);
                     el.classList.add('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
                 }
