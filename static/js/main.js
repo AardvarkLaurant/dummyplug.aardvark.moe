@@ -80,6 +80,8 @@
             });
         },
         handlePopState: e => {
+            // in back or forward scenarios, this would get the json of the back/forward page
+            // and substitute it
             const { route } = e.state;
             if (route) {
                 window.DummyPlug.navigate(route);
