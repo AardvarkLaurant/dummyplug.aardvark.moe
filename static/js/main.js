@@ -53,7 +53,7 @@
         handleNavigation: e => {
             e.preventDefault();
 
-            route = `${e.target.href}`;
+            const route = `${e.target.href}`;
 
             fetch(route)
             .then(response => response.json())
