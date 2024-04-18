@@ -99,9 +99,11 @@
                 } 
 
                 if (buttonState) {
+                    console.log('active');
                     el.classList.add('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
                 } else {
+                    console.log('inactive');
                     el.classList.remove('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
                 }
