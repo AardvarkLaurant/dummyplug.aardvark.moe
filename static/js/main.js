@@ -64,11 +64,13 @@
 
             window.DummyPlug.navigate(route);
         },
-        navigate: route => {
+        navigate: (route, pushState = 1) => {
             fetch(route)
             .then(response => response.text())
             .then(html => {
-                window.history.pushState({ route }, '', route);
+                if (pushState) {
+                    window.history.pushState({ route }, '', route);
+                }
 
                 const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
@@ -85,7 +87,7 @@
         handlePopState: e => {
             const { route } = e.state || { route: '/' };
             if (route) {
-                window.DummyPlug.navigate(route);
+                window.DummyPlug.navigate(route, 0);
             }
         },
         recordButtonState: el => {
