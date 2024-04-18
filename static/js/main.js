@@ -132,7 +132,7 @@
     $$('#table-of-contents a').forEach(el => {
         el.addEventListener('click', window.DummyPlug.handleLinkNavigation);
     });
-    window.addEventListener('popstate', window.DummyPlug.handlePopState);
+    // window.addEventListener('popstate', window.DummyPlug.handlePopState);
 
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', window.DummyPlug.buttonToggle);
