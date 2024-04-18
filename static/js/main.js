@@ -31,6 +31,7 @@
     });
 
     window.DummyPlug = {
+        currentRoute: '',
         content: null,
         footnotes: null,
         references: null,
@@ -65,25 +66,28 @@
         },
         navigate: route => {
             fetch(route)
-            .then(response => response.json())
-            .then(data => {
+            .then(response => response.text())
+            .then(html => {
                 window.history.pushState({ route }, '', route);
 
-                document.title = data.title;
-                window.DummyPlug.content.innerHTML = data.content;
-                window.DummyPlug.footnotes.innerHTML = data.footnotes;
-                window.DummyPlug.references.innerHTML = data.references;
+                const.parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                document.title = doc.querySelector('title').textContent;
+                window.DummyPlug.content.innerHTML = doc.querySelector('#article-body').innerHTML;
+                window.DummyPlug.footnotes.innerHTML = doc.querySelector('#footnotes').innerHTML;
+                window.DummyPlug.references.innerHTML = doc.querySelector('#references').innerHTML;
             })
             .catch(error => {
                 console.log(error);
             });
         },
-        // handlePopState: e => {
-        //     const { route } = e.state;
-        //     if (route) {
-        //         window.DummyPlug.navigate(route);
-        //     }
-        // },
+        handlePopState: e => {
+            const { route } = e.state || { route: '/' };
+            if (route) {
+                window.DummyPlug.navigate(route);
+            }
+        },
         recordButtonState: el => {
             window.DummyPlug.Storage.Set('button-' + el.id, el.classList.contains('active') ? 1 : 0);
         },
@@ -132,7 +136,7 @@
     $$('#table-of-contents a').forEach(el => {
         el.addEventListener('click', window.DummyPlug.handleLinkNavigation);
     });
-    // window.addEventListener('popstate', window.DummyPlug.handlePopState);
+    window.addEventListener('popstate', window.DummyPlug.handlePopState);
 
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', window.DummyPlug.buttonToggle);
