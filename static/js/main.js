@@ -86,43 +86,24 @@
             }
         },
         recordButtonState: el => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
-
-            buttonStates[el.id] = el.classList.contains('active') ? 1 : 0;
-
-            const buttonStatesString = JSON.stringify(buttonStates);
-
-            window.DummyPlug.Storage.Set('buttonStates', buttonStatesString);
+            window.DummyPlug.Storage.Set('button-' + el.id, el.classList.contains('active') ? 1 : 0);
         },
         restoreButtonState: () => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
-
-            if (!buttonStates) {
-                $$('.btn-toggle').forEach(button => {
-                    window.DummyPlug.recordButtonState(button);
-                });
-            }
-
-            console.log(buttonStates);
-
-            window.DummyPlug.Storage.Get('buttonStates');
-
-            console.log(buttonStates);
-
-            for (let id in buttonStates) {
-                const el = $('#' + [id]);
-                if (buttonStates[id]) {
-                    el.classList.add('active');
-                    const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
-                    controlledElement.classList.add('show');
-                } else {
+            $$('.btn-toggle').forEach(el => {
+                let buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
+                console.log(buttonState);
+                if (buttonState === null) {
+                    window.DummyPlug.recordButtonState(el);
+                } else if (!buttonState) {
                     el.classList.remove('active');
                     const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
                     controlledElement.classList.remove('show');
+                } else {
+                    el.classList.add('active');
+                    const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
+                    controlledElement.classList.add('show');
                 }
-
-                $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
-            }
+            });
         },
         Storage: {
             Get: function(e) {
