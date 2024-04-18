@@ -651,8 +651,11 @@ button:not(:disabled),
 }
 
 .pane {
-  overflow-y: auto;
   max-height: calc(100vh - var(--height-site-header));
+}
+
+.reader.two-pane > #pane-left {
+  overflow-y: scroll;
 }
 
 .reader:not(.two-pane) > #pane-left {
@@ -682,7 +685,7 @@ button:not(:disabled),
 
 #pane-right > .pane-item {
   flex-grow: 1;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 #pane-right > .pane-item:not(:last-child) {
