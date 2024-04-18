@@ -103,6 +103,12 @@
                 });
             }
 
+            console.log(buttonStates);
+
+            window.DummyPlug.Storage.Get('buttonStates');
+
+            console.log(buttonStates);
+
             for (let id in buttonStates) {
                 const el = $('#' + id);
                 if (buttonStates[id]) {
