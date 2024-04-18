@@ -86,6 +86,7 @@
             }
         },
         recordButtonState: el => {
+            console.log(el.id + ': ' + (el.classList.contains('active') ? 1 : 0));
             window.DummyPlug.Storage.Set('button-' + el.id, el.classList.contains('active') ? 1 : 0);
         },
         restoreButtonState: () => {
@@ -97,12 +98,12 @@
                     buttonState = window.DummyPlug.Storage.Get('button-' + el.id);
                 } 
 
-                if (buttonState === 0) {
-                    el.classList.remove('active');
-                    $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
-                } else {
+                if (buttonState) {
                     el.classList.add('active');
                     $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
+                } else {
+                    el.classList.remove('active');
+                    $(`#${el.getAttribute('aria-controls')}`).classList.remove('show');
                 }
                 console.log(buttonState);
             });
