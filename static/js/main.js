@@ -88,7 +88,7 @@
 
             if (!buttonStates) {
                 $$('.btn-toggle').forEach(button => {
-                    buttonStates[button.id]: button.classList.contains('active') ? 1 : 0;
+                    buttonStates[button.id] = button.classList.contains('active') ? 1 : 0;
                 });
             }
 
