@@ -109,6 +109,8 @@
                     $(`#${el.getAttribute('aria-controls')}`).classList.add('show');
                 }
             });
+
+            $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
         },
         Storage: {
             Get: function(e) {
