@@ -75,7 +75,7 @@
             }
         },
         recordButtonState: el => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates');
 
             buttonStates[el.id] = el.classList.contains('active') ? 1 : 0;
 
@@ -84,7 +84,7 @@
             window.DummyPlug.Storage.Set('buttonStates', buttonStatesString);
         },
         restoreButtonState: () => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates');
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
 
             if (!buttonStates) {
                 $$('.btn-toggle').forEach(button => {
