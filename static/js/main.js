@@ -68,7 +68,7 @@
                 console.log(error);
             });
         },
-        handleBackNavigation: e => {
+        handlePopState: e => {
             const { route } = e.state.route;
             if (route) {
                 window.DummyPlug.navigate(route);
@@ -121,7 +121,7 @@
     $$('#table-of-contents a').forEach(el => {
         el.addEventListener('click', window.DummyPlug.handleLinkNavigation);
     });
-    window.addEventListener('popstate', window.DummyPlug.handleBackNavigation);
+    window.addEventListener('popstate', window.DummyPlug.handlePopState);
 
     $$('.btn-toggle').forEach(el => {
         el.addEventListener('click', e => {
