@@ -715,7 +715,6 @@ button:not(:disabled),
 
   #pane-right {
     background: var(--color-background-primary);
-    border-bottom: unset;
     border-top: 2px solid var(--color-background-dark);
   }
 
@@ -730,14 +729,6 @@ button:not(:disabled),
     bottom: 0;
     background: var(--color-background-primary);
     border-top: 2px solid var(--color-background-dark);
-    border-bottom: unset;
-  }
-
-  #pane-right > #table-of-contents {
-    width: 100%;
-    height: calc(100% - var(--height-site-header));
-    overscroll-behavior-y: contain;
-    border-top: unset;
-    z-index: 999;
+    border-bottom: unset!important;
   }
 }
