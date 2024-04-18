@@ -70,7 +70,7 @@
             .then(html => {
                 window.history.pushState({ route }, '', route);
 
-                const.parser = new DOMParser();
+                const parser = new DOMParser();
                 const doc = parser.parseFromString(html, 'text/html');
 
                 document.title = doc.querySelector('title').textContent;
