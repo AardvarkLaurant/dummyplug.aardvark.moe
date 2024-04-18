@@ -603,7 +603,7 @@ button:not(:disabled),
 #table-of-contents-wrap {
   width: 600px;
   max-width: 100%;
-  height: calc(100vh - var(--height-site-header) - 1.5rem);
+  height: calc(100vh - var(--height-site-header) - 3rem);
   position: fixed;
   top: calc(1.5rem + var(--height-site-header));
   right: 3rem;
@@ -616,6 +616,7 @@ button:not(:disabled),
 
 #table-of-contents {
   overflow-y: auto;
+  height: 100%;
   padding: 3rem;
   background: var(--color-background-primary);
   border: 3px solid var(--color-background-dark);
@@ -633,7 +634,6 @@ button:not(:disabled),
   }
 
   #table-of-contents {
-    height: 100%;
     padding: 1rem;
     border: unset;
     box-shadow: unset;
