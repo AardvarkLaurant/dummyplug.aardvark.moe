@@ -80,13 +80,12 @@
             });
         },
         handlePopState: e => {
-            const { route } = e.state.route;
+            const { route } = e.state;
             if (route) {
                 window.DummyPlug.navigate(route);
             }
         },
         recordButtonState: el => {
-            console.log(el.id + ': ' + (el.classList.contains('active') ? 1 : 0));
             window.DummyPlug.Storage.Set('button-' + el.id, el.classList.contains('active') ? 1 : 0);
         },
         restoreButtonState: () => {
