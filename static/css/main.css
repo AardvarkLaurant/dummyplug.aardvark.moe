@@ -627,10 +627,12 @@ button:not(:disabled),
   #table-of-contents-wrap {
     width: 100%;
     height: calc(100vh - var(--height-site-header));
+    top: var(--height-site-header);
     right: 0;
   }
 
   #table-of-contents {
+    height: 100%;
     padding: 1rem;
     border: unset;
     box-shadow: unset;
@@ -712,6 +714,7 @@ button:not(:disabled),
 
   #pane-right {
     background: var(--color-background-primary);
+    border-bottom: unset;
     border-top: 2px solid var(--color-background-dark);
   }
 
