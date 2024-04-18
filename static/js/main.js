@@ -86,11 +86,11 @@
             }
         },
         recordButtonState: el => {
-            let buttonStates = window.DummyPlug.Storage.Get('buttonStates');
+            let buttonStates = window.DummyPlug.Storage.Get('buttonStates') || {};
 
             buttonStates[el.id] = el.classList.contains('active') ? 1 : 0;
 
-            buttonStatesString = JSON.stringify(buttonStates);
+            const buttonStatesString = JSON.stringify(buttonStates);
 
             window.DummyPlug.Storage.Set('buttonStates', buttonStatesString);
         },
@@ -99,7 +99,7 @@
 
             if (!buttonStates) {
                 $$('.btn-toggle').forEach(button => {
-                    buttonStates[button.id] = button.classList.contains('active') ? 1 : 0;
+                    window.DummyPlug.recordButtonState(button);
                 });
             }
 
