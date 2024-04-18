@@ -42,6 +42,36 @@
     });
 
     window.DummyPlug = {
+        content: null,
+        footnotes: null,
+        references: null,
+        init: () => {
+            window.DummyPlug.content = $('#article-body');
+            window.DummyPlug.footnotes = $('#footnotes');
+            window.DummyPlug.references = $('#references');
+        },
+        handleNavigation: e => {
+            e.preventDefault();
+
+            route = `${e.target.href}`;
+
+            fetch(route)
+            .then(response => response.json())
+            .then(data => {
+                window.history.pushState({}, '', e.target.href);
+
+                document.title = data.title;
+                window.DummyPlug.content.innerHTML = data.content;
+                window.DummyPlug.footnotes.innerHTML = data.footnotes;
+                window.DummyPlug.references.innerHTML = data.references;
+            })
+            .catch(error => {
+
+            });
+        },
+        recordButtonState: e => {
+
+        },
         Storage: {
             Get: function(e) {
                 try {
@@ -62,6 +92,10 @@
             }
         }
     }
+    window.DummyPlug.init();
+    $$('#table-of-contents a').forEach(el => {
+        el.addEventListener('click', window.DummyPlug.handleNavigation);
+    });
 
     // Service Worker
     'serviceWorker' in navigator && navigator.serviceWorker.register('/service-worker.js', {
