@@ -105,11 +105,17 @@
 
             for (let id in buttonStates) {
                 const el = $(`#${id}`);
-                if () {
-
+                if (buttonStates[id]) {
+                    el.classList.add('active');
+                    const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
+                    controlledElement.classList.add('show');
                 } else {
-
+                    el.classList.remove('active');
+                    const controlledElement = $(`#${el.getAttribute('aria-controls')}`);
+                    controlledElement.classList.remove('show');
                 }
+
+                $('#pane-right .pane-item.show') ? reader.classList.add('two-pane') : reader.classList.remove('two-pane');
             }
         },
         Storage: {
