@@ -59,7 +59,6 @@
             // but you would ideally communicate to the server that this is an AJAX request,
             // and so the server would send back a JSON representation of the page instead
             // of a full HTML document.
-            // 
             const route = `${e.target.href}`;
 
             window.DummyPlug.navigate(route);
@@ -68,7 +67,7 @@
             fetch(route)
             .then(response => response.json())
             .then(data => {
-                window.history.pushState({ route: route }, '', route);
+                window.history.pushState({ route }, '', route);
 
                 document.title = data.title;
                 window.DummyPlug.content.innerHTML = data.content;
@@ -79,14 +78,12 @@
                 console.log(error);
             });
         },
-        handlePopState: e => {
-            // in back or forward scenarios, this would get the json of the back/forward page
-            // and substitute it
-            const { route } = e.state;
-            if (route) {
-                window.DummyPlug.navigate(route);
-            }
-        },
+        // handlePopState: e => {
+        //     const { route } = e.state;
+        //     if (route) {
+        //         window.DummyPlug.navigate(route);
+        //     }
+        // },
         recordButtonState: el => {
             window.DummyPlug.Storage.Set('button-' + el.id, el.classList.contains('active') ? 1 : 0);
         },
